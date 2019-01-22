@@ -13,6 +13,8 @@ namespace Program
             Console.WriteLine("Olá Mundo!");
             Console.WriteLine("Boa tarde!");
             Console.ReadLine();
+
+            Console.WriteLine("Como você está");
         }
     }
 }
