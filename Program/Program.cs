@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Program.Entities;
+using Program.Entities.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,13 +12,24 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Olá Mundo!");
-            Console.WriteLine("Como você está hoje");
-            Console.WriteLine("Tenha um ótimo dia!");
 
-            Console.ReadLine();
+            Order order = new Order
+            {
+                Id = 1080,
+                Moment = DateTime.Now,
+                Status = OrderStatus.PendingPayment
+            };
 
-            
+            Console.WriteLine(order);
+
+            string txt = OrderStatus.PendingPayment.ToString();
+            Console.WriteLine(txt);
+
+            //OrderStatus os;
+            //Enum.TryParse("Shipped", true, out os);
+
+            OrderStatus os = (OrderStatus)Enum.Parse(typeof(OrderStatus), "Delivered");
+
         }
     }
 }
